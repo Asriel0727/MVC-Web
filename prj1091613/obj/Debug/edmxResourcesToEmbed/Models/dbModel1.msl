@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="netdbAModelStoreContainer" CdmEntityContainer="dbEntities">
+    <EntitySetMapping Name="TableAccount1091613">
+      <EntityTypeMapping TypeName="netdbAModel.TableAccount1091613">
+        <MappingFragment StoreEntitySet="TableAccount1091613">
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableAcquisition1091613">
+      <EntityTypeMapping TypeName="netdbAModel.TableAcquisition1091613">
+        <MappingFragment StoreEntitySet="TableAcquisition1091613">
+          <ScalarProperty Name="AId" ColumnName="AId" />
+          <ScalarProperty Name="ANo" ColumnName="ANo" />
+          <ScalarProperty Name="AName" ColumnName="AName" />
+          <ScalarProperty Name="APrice" ColumnName="APrice" />
+          <ScalarProperty Name="ARemark" ColumnName="ARemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableDrama1091613">
+      <EntityTypeMapping TypeName="netdbAModel.TableDrama1091613">
+        <MappingFragment StoreEntitySet="TableDrama1091613">
+          <ScalarProperty Name="DId" ColumnName="DId" />
+          <ScalarProperty Name="DClass" ColumnName="DClass" />
+          <ScalarProperty Name="DName" ColumnName="DName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableIntroductions1091613">
+      <EntityTypeMapping TypeName="netdbAModel.TableIntroductions1091613">
+        <MappingFragment StoreEntitySet="TableIntroductions1091613">
+          <ScalarProperty Name="IName" ColumnName="IName" />
+          <ScalarProperty Name="IID" ColumnName="IID" />
+          <ScalarProperty Name="IGrander" ColumnName="IGrander" />
+          <ScalarProperty Name="IMail" ColumnName="IMail" />
+          <ScalarProperty Name="IDate" ColumnName="IDate" />
+          <ScalarProperty Name="ISchool" ColumnName="ISchool" />
+          <ScalarProperty Name="Iabout" ColumnName="Iabout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableSClass1091613">
+      <EntityTypeMapping TypeName="netdbAModel.TableSClass1091613">
+        <MappingFragment StoreEntitySet="TableSClass1091613">
+          <ScalarProperty Name="SCId" ColumnName="SCId" />
+          <ScalarProperty Name="SCName" ColumnName="SCName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableStar1091613">
+      <EntityTypeMapping TypeName="netdbAModel.TableStar1091613">
+        <MappingFragment StoreEntitySet="TableStar1091613">
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="StrName" ColumnName="StrName" />
+          <ScalarProperty Name="StrClass" ColumnName="StrClass" />
+          <ScalarProperty Name="SCId" ColumnName="SCId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableTravel1091613">
+      <EntityTypeMapping TypeName="netdbAModel.TableTravel1091613">
+        <MappingFragment StoreEntitySet="TableTravel1091613">
+          <ScalarProperty Name="TId" ColumnName="TId" />
+          <ScalarProperty Name="TNo" ColumnName="TNo" />
+          <ScalarProperty Name="TName" ColumnName="TName" />
+          <ScalarProperty Name="TDateStart" ColumnName="TDateStart" />
+          <ScalarProperty Name="TDateEnd" ColumnName="TDateEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

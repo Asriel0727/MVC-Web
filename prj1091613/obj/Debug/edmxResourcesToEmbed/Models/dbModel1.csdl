@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="netdbAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TableAccount1091613">
+    <Key>
+      <PropertyRef Name="Account" />
+    </Key>
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableAcquisition1091613">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ANo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APrice" Type="Int32" />
+    <Property Name="ARemark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableDrama1091613">
+    <Key>
+      <PropertyRef Name="DId" />
+    </Key>
+    <Property Name="DId" Type="Int32" Nullable="false" />
+    <Property Name="DClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableIntroductions1091613">
+    <Key>
+      <PropertyRef Name="IName" />
+    </Key>
+    <Property Name="IName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IGrander" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDate" Type="DateTime" Precision="0" />
+    <Property Name="ISchool" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Iabout" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableSClass1091613">
+    <Key>
+      <PropertyRef Name="SCId" />
+    </Key>
+    <Property Name="SCId" Type="Int32" Nullable="false" />
+    <Property Name="SCName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableStar1091613">
+    <Key>
+      <PropertyRef Name="StrId" />
+    </Key>
+    <Property Name="StrId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StrName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StrClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SCId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TableTravel1091613">
+    <Key>
+      <PropertyRef Name="TId" />
+    </Key>
+    <Property Name="TId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TDateStart" Type="DateTime" Precision="0" />
+    <Property Name="TDateEnd" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TableAccount1091613" EntityType="Self.TableAccount1091613" />
+    <EntitySet Name="TableAcquisition1091613" EntityType="Self.TableAcquisition1091613" />
+    <EntitySet Name="TableDrama1091613" EntityType="Self.TableDrama1091613" />
+    <EntitySet Name="TableIntroductions1091613" EntityType="Self.TableIntroductions1091613" />
+    <EntitySet Name="TableSClass1091613" EntityType="Self.TableSClass1091613" />
+    <EntitySet Name="TableStar1091613" EntityType="Self.TableStar1091613" />
+    <EntitySet Name="TableTravel1091613" EntityType="Self.TableTravel1091613" />
+  </EntityContainer>
+</Schema>

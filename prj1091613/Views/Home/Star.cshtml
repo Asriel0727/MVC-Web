@@ -1,0 +1,59 @@
+﻿@model prj1091613.Models.SCEmp
+@{
+    ViewBag.Title = "明星查詢";
+}
+
+<h2>@ViewBag.SC</h2>
+<style>
+    tr:nth-child(odd) {
+        color: black;
+        background-color: lightgreen;
+    }
+
+    tr:nth-child(even) {
+        color: black;
+        background-color: white;
+    }
+
+    body {
+        cursor: url('../images/prj.ico'),auto
+    }
+</style>
+<a href="/Home/SCCreate" class="btn btn-warning" style="float:right">新增明星</a>
+
+<div class="row">
+    <div class="col-md-3">
+        @foreach (var item in Model.SClass)
+        {
+            <p>
+                @Html.ActionLink(item.SCName, "Star", new { scid = item.SCId })
+            </p>
+        }
+    </div>
+    <div class="col-md-9">
+        <table class="table">
+            <tr>
+                <th>編號</th>
+                <th>明星姓名</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.Star)
+            {
+                <tr>
+                    <td>@item.StrId</td>
+                    <td>@item.StrName</td>
+                    <td>
+                        @Html.ActionLink("刪除", "SCDelete",
+                            new { SCId = item.StrId },
+                            new
+                            {
+                                onclick = "return confirm('確定刪除嗎？');",
+                                     @class = "btn btn-danger"
+                            })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

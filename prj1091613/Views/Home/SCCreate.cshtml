@@ -1,0 +1,61 @@
+﻿@model IEnumerable<prj1091613.Models.TableSClass1091613>
+@{
+    ViewBag.Title = "新增";
+}
+
+<style>
+    body {
+        cursor: url('../images/prj.ico'),auto
+    }
+</style>
+
+<h2>新增</h2>
+<form method="post" action="@Url.Action("SCCreate")">
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label for="StrId" class="control-label col-md-2">創建編號(5個字元)</label>
+            <div class="col-md-10">
+                <input type="text" id="StrId" name="StrId"
+                       class="form-control" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="StrClass" class="control-label col-md-2">類別</label>
+            <div class="col-md-10">
+                <select id="SCId" name="SCId" class="form-control">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.SCId">@item.SCName</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="StrName" class="control-label col-md-2">姓名</label>
+            <div class="col-md-10">
+                <input type="text" id="StrName" name="StrName"
+                       class="form-control" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="新增" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("回前頁", "Star")
+    </div>
+
+</form>
+
+@if (ViewBag.Error == true)
+{
+    <div class="alert alert-danger">
+        <strong>創建編號重複</strong>
+    </div>
+}

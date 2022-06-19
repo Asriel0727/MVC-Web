@@ -1,0 +1,98 @@
+﻿@model IEnumerable<prj1091613.Models.TableTravel1091613>
+
+@using PagedList
+@using PagedList.Mvc
+
+
+@{
+    ViewBag.Title = "旅遊行程";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<h2>旅遊/行程</h2>
+
+<style>
+    body {
+        cursor: url('../images/prj.ico'),auto
+    }
+</style>
+
+@if (Model.Count() == 0)
+{
+
+    <div class="alert alert-info">
+        <strong>無旅遊/行程紀錄</strong>
+        <a href="/Home/TraCreate" style="float:right">新增日期</a>
+    </div>
+}
+else
+{
+    <style>
+        tr:nth-child(odd) {
+            color: black;
+            background-color: lightgreen;
+        }
+
+        tr:nth-child(even) {
+            color: black;
+            background-color: white;
+        }
+
+        body {
+            cursor: url('../images/prj.ico'),auto
+        }
+    </style>
+    <a href="/Home/TraCreate" class="btn btn-info" style="float:right">新增日期</a>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TDateStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TDateEnd)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TDateStart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TDateEnd)
+                </td>
+                <td>
+                    <a href="@Url.Action("TraEdit")?TId=@item.TId" class="btn btn-warning">編輯</a>
+                    <a href="@Url.Action("TraDelete")?TId=@item.TId"
+                       class="btn btn-danger"
+                       onclick="return confirm('確定要刪除 @item.TId 的行程紀錄嗎?');">
+                        刪除
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Travel", new { page }))
+}

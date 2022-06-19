@@ -1,0 +1,82 @@
+﻿@model prj1091613.Models.TableTravel1091613
+
+@{
+    ViewBag.Title = "創建新行程";
+}
+
+<h2>創建新行程</h2>
+
+<style>
+    body {
+        cursor: url('../images/prj.ico'),auto
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TNo, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.TNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TName, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.TName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TDateStart, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TDateStart, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.TDateStart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TDateEnd, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TDateEnd, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.TDateEnd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="創建" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("回前頁", "Travel")
+    </div>
+}
+@if (ViewBag.Error == true)
+{
+    <div class="alert alert-danger">
+        <strong>會員ID重複，你無法一個會員有多個行程，請等待最近的行程結束再增加</strong>
+    </div>
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

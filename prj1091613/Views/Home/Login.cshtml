@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "會員登入";
+    Layout = "~/Views/Shared/_Layoutout.cshtml";
+}
+
+<h2>會員登入<br><small>登入帳號:asriel<br>登入密碼:w0979615727</small></h2>
+<style>
+    body {
+        cursor: url('../images/prj.ico'),auto
+    }
+</style>
+
+<form action="@Url.Action("Login")" method="post">
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <span class="control-label col-md-2">帳號</span>
+            <div class="col-md-10">
+                <input type="text" id="UId" name="UId" required="required" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2">密碼</span>
+            <div class="col-md-10">
+                <input type="password" id="Pwd" name="Pwd" required="required" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="登入" class="btn btn-default" />
+                @ViewBag.Message
+            </div>
+        </div>
+    </div>
+</form>
+

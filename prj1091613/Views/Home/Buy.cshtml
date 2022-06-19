@@ -1,0 +1,94 @@
+﻿@model IEnumerable<prj1091613.Models.TableAcquisition1091613>
+
+
+@using PagedList
+@using PagedList.Mvc
+
+
+@{
+    ViewBag.Title = "收購";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<h2>收購</h2>
+@if (Model.Count() == 0)
+{
+
+    <div class="alert alert-info">
+        <strong>無收購紀錄</strong>
+        <a href="/Home/BuyCreate" style="float:right">新增收購</a>
+    </div>
+}
+else
+{
+
+<style>
+    tr:nth-child(odd) {
+        color: black;
+        background-color: lightgreen;
+    }
+
+    tr:nth-child(even) {
+        color: black;
+        background-color: white;
+    }
+
+    body {
+        cursor: url('../images/prj.ico'),auto
+    }
+    </style>
+
+    <a href="/Home/BuyCreate" class="btn btn-info" style="float:right">新增收購</a>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().AId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ANo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().AName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().APrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ARemark)
+            </th>
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ANo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.APrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARemark)
+                </td>
+                <td>
+                    <a href="@Url.Action("BuyEdit")?AId=@item.AId" class="btn btn-warning">編輯</a>
+                    <a href="@Url.Action("BuyDelete")?AId=@item.AId"
+                       class="btn btn-danger"
+                       onclick="return confirm('確定要刪除 @item.AId 的紀錄嗎?');">
+                        刪除
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Buy", new { page }))
+}

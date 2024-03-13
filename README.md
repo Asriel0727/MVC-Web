@@ -1,5 +1,6 @@
 # MVC-Web 眾人小站
-利用Model、View、Constroller個別控制，並且加入資料庫
+利用Model、View、Constroller個別控制，並且加入資料庫  
+[Demo 影片](https://www.youtube.com/watch?v=JC-y-y8_nVY)
 ## 網站定位
 使用者必須註冊會員後登入才能使用以下功能  
 希望可以利用(似)Open Data 的方式建立一個所有會員可以看到對方在網頁上公開的內容  

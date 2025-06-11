@@ -3,12 +3,10 @@
 
 <div align="center">
 
-| [繁體中文](README.md) | [English](README_en-us.md) | 
+| [繁體中文](README.md) | [English](README_en-us.md) | 🎥 [Demo 影片](https://www.youtube.com/watch?v=JC-y-y8_nVY) |
+
 
 </div>
-
-🎥 [Demo 影片](https://www.youtube.com/watch?v=JC-y-y8_nVY)
-
 ---
 
 ## 📌 網站定位與核心理念
